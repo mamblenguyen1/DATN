@@ -22,9 +22,7 @@ const courseDetailSchema = new Schema({
         required: true,
         default: ''
     }
-})
-
-courseDetailSchema.plugin(timestampsPlugin);
+}, { timestamps: true });
 
 const CourseDetail = model('CourseDetail', courseDetailSchema);
 export default CourseDetail;

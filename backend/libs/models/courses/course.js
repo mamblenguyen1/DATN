@@ -1,8 +1,5 @@
 import { Schema, SchemaTypes, model } from "mongoose";
-import timestampsPlugin from "mongoose-timestamp";
 import autopopulatePlugin from "mongoose-autopopulate";
-import CourseSyllabus from "./courseSyllabus.js";
-import CourseDetail from "./courseDetail.js";
 import { COURSE_TYPES } from "../../utils/constants.js";
 
 
@@ -115,9 +112,8 @@ const courseSchema = new Schema({
         }
     ],
     tags: [String],
-});
+}, { timestamps: true });
 
-courseSchema.plugin(timestampsPlugin);
 courseSchema.plugin(autopopulatePlugin);
 
 const Course = model("Course", courseSchema);

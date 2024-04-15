@@ -1,5 +1,4 @@
 import { Schema, SchemaTypes, model } from "mongoose";
-import timestampsPlugin from "mongoose-timestamp";
 
 const courseLearningSchema = new Schema({
     title: {
@@ -24,9 +23,7 @@ const courseLearningSchema = new Schema({
         required: true,
         default: false
     }
-})
-
-courseLearningSchema.plugin(timestampsPlugin);
+}, { timestamps: true })
 
 const CourseLearning = model('CourseLearning', courseLearningSchema);
 export default CourseLearning;

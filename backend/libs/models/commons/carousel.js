@@ -1,5 +1,4 @@
 import { Schema, model } from "mongoose";
-import timestampsPlugin from "mongoose-timestamp";
 
 const carouselSchema = new Schema({
     title: String,
@@ -8,9 +7,7 @@ const carouselSchema = new Schema({
     media: String,
     published: Boolean,
     display_order: Number
-})
-
-carouselSchema.plugin(timestampsPlugin);
+}, { timestamps: true });
 
 const Carousel = model('Carousel', carouselSchema);
 export default Carousel;

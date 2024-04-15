@@ -13,8 +13,7 @@
   "description": "",
   "dependencies": {
     "mongoose": "^8.3.1",
-    "mongoose-autopopulate": "^1.1.0",
-    "mongoose-timestamp": "^0.6.0"
+    "mongoose-autopopulate": "^1.1.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"

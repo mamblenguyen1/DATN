@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
 import Course from "../libs/models/courses/course.js";
 import {getCarousels} from '../libs/modelActions/commons/carouselModelActions.js';
-import { findBySlug, findCourseById, getFeaturedCourses } from "../libs/modelActions/courses/courseModelActions.js";
+import { createCourseLearning, createCourseLesson, createCourseLessons, findCourseById, getCourseLearning, getFeaturedCourses } from "../libs/modelActions/courses/courseModelActions.js";
+import Carousel from "../libs/models/commons/carousel.js";
+import CourseLesson from "../libs/models/courses/courseLesson.js";
 
 
 const CONNECT_STRING = "mongodb://localhost:27017/edumandb";
@@ -15,6 +17,25 @@ db.on("error", console.error.bind(console, "Mongodb connection error"));
 /**
  * Courses
  */
+
+// createCourseLesson('There is no spoon').then((res) => {
+//   console.log("🚀 ~ createCourseLesson ~ res:", res);
+// })
+
+// createCourseLessons([{title: 'abc'}, {title: 'xyz'}, {title: 'ddd'}])
+// .then((res) => {
+//   return createCourseLearning({title: 'Course learning', lessons: res.map(t => t._id)}).then((res) => {
+//     console.log("🚀 ~ returncreateCourseLearning ~ res:", res);
+    
+//   })
+// })
+
+// 661d58bc63636fb80df6f4ec
+
+getCourseLearning('661d58bc63636fb80df6f4ec').then((res) => {
+  console.log("🚀 ~ res:", res.lessons);
+  return ;
+});
 
 
 // const courseSummary = new CourseSummary({
@@ -57,25 +78,25 @@ db.on("error", console.error.bind(console, "Mongodb connection error"));
  */
 
 
-await Carousel.insertMany([
-  {
-    title: "google",
-    position: "top_carousel",
-    url: "http://google.com",
-    media: "https://picsum.photos/200",
-    published: true,
-    display_order: 1,
-  },
-  {
-    title: "facebook",
-    position: "top_carousel",
-    url: "http://facebook.com",
-    media: "https://picsum.photos/200",
-    published: true,
-    display_order: 2,
-  },
-]);
+// await Carousel.insertMany([
+//   {
+//     title: "google",
+//     position: "top_carousel",
+//     url: "http://google.com",
+//     media: "https://picsum.photos/200",
+//     published: true,
+//     display_order: 1,
+//   },
+//   {
+//     title: "facebook",
+//     position: "top_carousel",
+//     url: "http://facebook.com",
+//     media: "https://picsum.photos/200",
+//     published: true,
+//     display_order: 2,
+//   },
+// ]);
 
-getCarousels("top_carousel").then((res) => {
-    console.log("🚀 ~ getCarousels ~ res:", res);
-});
+// getCarousels("top_carousel").then((res) => {
+//     console.log("🚀 ~ getCarousels ~ res:", res);
+// });

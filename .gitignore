@@ -1,1 +1,3 @@
+db/data/*
+db/logs/*
 backend/node_modules

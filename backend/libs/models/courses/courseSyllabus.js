@@ -11,9 +11,7 @@ const courseSyllabusSchema = new Schema({
             autopopulate: true
         }
     ]
-})
-
-courseSyllabusSchema.plugin(timestampsPlugin);
+}, { timestamps: true });
 
 const CourseSyllabus = model('CourseSyllabus', courseSyllabusSchema);
 export default CourseSyllabus;
