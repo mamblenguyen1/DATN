@@ -1,10 +1,16 @@
 import mongoose from "mongoose";
 import Course from "../libs/models/courses/course.js";
-import {getCarousels} from '../libs/modelActions/commons/carouselModelActions.js';
-import { createCourseLearning, createCourseLesson, createCourseLessons, findCourseById, getCourseLearning, getFeaturedCourses } from "../libs/modelActions/courses/courseModelActions.js";
+import { getCarousels } from "../libs/modelActions/commons/carouselModelActions.js";
+import {
+    createCourseLearning,
+    createCourseLesson,
+    createCourseLessons,
+    findCourseById,
+    getCourseLearning,
+    getFeaturedCourses,
+} from "../libs/modelActions/courses/courseModelActions.js";
 import Carousel from "../libs/models/commons/carousel.js";
 import CourseLesson from "../libs/models/courses/courseLesson.js";
-
 
 const CONNECT_STRING = "mongodb://localhost:27017/edumandb";
 
@@ -26,17 +32,16 @@ db.on("error", console.error.bind(console, "Mongodb connection error"));
 // .then((res) => {
 //   return createCourseLearning({title: 'Course learning', lessons: res.map(t => t._id)}).then((res) => {
 //     console.log("🚀 ~ returncreateCourseLearning ~ res:", res);
-    
+
 //   })
 // })
 
 // 661d58bc63636fb80df6f4ec
 
-getCourseLearning('661d58bc63636fb80df6f4ec').then((res) => {
-  console.log("🚀 ~ res:", res.lessons);
-  return ;
+getCourseLearning("661d58bc63636fb80df6f4ec").then((res) => {
+    console.log("🚀 ~ res:", res.lessons);
+    return;
 });
-
 
 // const courseSummary = new CourseSummary({
 //     subscribers: 12663,
@@ -59,7 +64,6 @@ getCourseLearning('661d58bc63636fb80df6f4ec').then((res) => {
 // })
 // await price.save();
 
-
 // getFeaturedCourses().then((res) => console.log('>>> ', res[0].summaries));
 // findBySlug('111').then(async(res) => {
 //     res.prices = price._id,
@@ -71,12 +75,10 @@ getCourseLearning('661d58bc63636fb80df6f4ec').then((res) => {
 //     // res.prices.discount_rate = 22;
 //     await res.save()
 // });
-    
 
 /**
  * Carousels
  */
-
 
 // await Carousel.insertMany([
 //   {
