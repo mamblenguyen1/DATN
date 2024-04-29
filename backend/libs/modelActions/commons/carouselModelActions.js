@@ -4,10 +4,11 @@ export const getCarousels = (position) => {
     return Carousel.find({ position }).sort({ display_order: "asc" }).exec();
 };
 
-export const createCarousel = (position) => {
-    
+export const createCarousel = ({position, media, url, title}) => {
+    return Carousel.create({title: title, url, position, media})
 }
 
-// export default {
-//     getCarousels
-// }
+export default {
+    getCarousels,
+    createCarousel
+}

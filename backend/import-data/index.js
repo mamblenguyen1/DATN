@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import Course from "../libs/models/courses/course.js";
-import { getCarousels } from "../libs/modelActions/commons/carouselModelActions.js";
+import { createCarousel, getCarousels } from "../libs/modelActions/commons/carouselModelActions.js";
 import {
     createCourseLearning,
     createCourseLesson,
@@ -99,6 +99,8 @@ getCourseLearning("661d58bc63636fb80df6f4ec").then((res) => {
 //   },
 // ]);
 
-// getCarousels("top_carousel").then((res) => {
-//     console.log("🚀 ~ getCarousels ~ res:", res);
-// });
+// createCarousel({title: 'aa', position: 'top_carousel', media: 'cc', url: 'dd'})
+
+getCarousels("top_carousel").then((res) => {
+    console.log("🚀 ~ getCarousels ~ res:", res);
+});
