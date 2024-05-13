@@ -4,7 +4,7 @@
 
 ### Run backend dev
 ```bash
-npm run dev
+npm run start:dev
 ```
 
 
